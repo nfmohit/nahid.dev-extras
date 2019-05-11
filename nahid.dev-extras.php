@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name: nahid.dev Extras
- * Plugin URI: https://nahid.dev/project/nahid.dev-extras
+ * Plugin URI: https://nahid.dev/projects/nahid.dev-extras
  * Description: Gatsby + WordPress extras for the nahid.dev site.
  * Author: Nahid Ferdous Mohit
  * Version: 1.0
