@@ -18,3 +18,8 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
+
+/*
+ * Call the plugin core file
+ */
+require_once plugin_dir_path( __FILE__ ) . 'includes/core.php';
