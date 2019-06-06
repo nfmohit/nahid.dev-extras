@@ -29,5 +29,44 @@ function project_links_metabox() {
 add_action( 'add_meta_boxes', 'project_links_metabox' );
 
 function project_links_metabox_callback() {
-	echo 'Hello World';
+
+    global $post;
+
+    $values = get_post_custom( $post->ID );
+
+    $github_url = isset( $values[ 'project_links_metabox_github_url' ] ) ? esc_url( $values[ 'project_links_metabox_github_url' ][ 0 ] ) : '';
+
+    $wp_org_url = isset( $values[ 'project_links_metabox_wp_org_url' ] ) ? esc_url( $values[ 'project_links_metabox_wp_org_url' ][ 0 ] ) : '';
+
+    wp_nonce_field( 'project_links_metabox_nonce', 'meta_box_nonce' );
+
+    ?>
+
+    <p>
+        <label for="project_links_metabox_github_url"><?php echo __( 'GitHub Repository URL', 'nahid.dev-extras' ); ?></label>
+        <input type="url" id="project_links_metabox_github_url" name="project_links_metabox_github_url" value="<?php echo esc_url( $github_url ); ?>" />
+    </p>
+
+    <p>
+        <label for="project_links_metabox_wp_org_url"><?php echo __( 'WordPress.org URL', 'nahid.dev-extras' ); ?></label>
+        <input type="url" id="project_links_metabox_wp_org_url" name="project_links_metabox_wp_org_url" value="<?php echo esc_url( $github_url ); ?>" />
+    </p>
+
+    <?php
 }
+
+function project_links_metabox_save( $post_id ) {
+
+    if( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) return;
+
+    if( !isset( $_POST['meta_box_nonce'] ) || !wp_verify_nonce( $_POST['meta_box_nonce'], 'project_links_metabox_nonce' ) ) return;
+
+    if( !current_user_can( 'edit_post' ) ) return;
+
+    if( isset( $_POST['project_links_metabox_github_url'] ) )
+        update_post_meta( $post_id, 'project_links_metabox_github_url', esc_url( $_POST['project_links_metabox_github_url'] ) );
+
+    if( isset( $_POST['project_links_metabox_wp_org_url'] ) )
+        update_post_meta( $post_id, 'project_links_metabox_wp_org_url', esc_url( $_POST['project_links_metabox_wp_org_url'] ) );
+}
+add_action( 'save_post', 'project_links_metabox_save' );
