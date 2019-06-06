@@ -42,15 +42,16 @@ function project_links_metabox_callback() {
 
     ?>
 
-    <p>
-        <label for="project_links_metabox_github_url"><?php echo __( 'GitHub Repository URL', 'nahid.dev-extras' ); ?></label>
-        <input type="url" id="project_links_metabox_github_url" name="project_links_metabox_github_url" value="<?php echo esc_url( $github_url ); ?>" />
-    </p>
-
-    <p>
-        <label for="project_links_metabox_wp_org_url"><?php echo __( 'WordPress.org URL', 'nahid.dev-extras' ); ?></label>
-        <input type="url" id="project_links_metabox_wp_org_url" name="project_links_metabox_wp_org_url" value="<?php echo esc_url( $github_url ); ?>" />
-    </p>
+    <div class="components-base-control">
+        <div class="components-base-control__field">
+            <label class="components-base-control__label" for="project_links_metabox_github_url"><?php echo __( 'GitHub Repository URL', 'nahid.dev-extras' ); ?></label>
+            <input class="components-text-control__input" type="url" id="project_links_metabox_github_url" name="project_links_metabox_github_url" value="<?php echo esc_url( $github_url ); ?>" />
+        </div>
+        <div class="components-base-control__field">
+            <label class="components-base-control__label" for="project_links_metabox_wp_org_url"><?php echo __( 'WordPress.org URL', 'nahid.dev-extras' ); ?></label>
+            <input class="components-text-control__input" type="url" id="project_links_metabox_wp_org_url" name="project_links_metabox_wp_org_url" value="<?php echo esc_url( $github_url ); ?>" />
+        </div>
+    </div>
 
     <?php
 }
