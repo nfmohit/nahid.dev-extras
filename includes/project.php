@@ -1,6 +1,6 @@
 <?php
 /**
- * Projects post type
+ * Project post type
  *
  * @since      1.0
  * @package    nahid.dev Extras
@@ -14,10 +14,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Register the projects post type
+ * Register the project post type
  */
-function create_projects_post_type() {
-    register_post_type( 'projects',
+function create_project_post_type() {
+    register_post_type( 'project',
       array(
         'labels' => array(
           'name' => __( 'Projects', 'nahid.dev-extras' ),
@@ -48,4 +48,4 @@ function create_projects_post_type() {
       )
     );
 }
-add_action( 'init', 'create_projects_post_type' );
+add_action( 'init', 'create_project_post_type' );

@@ -14,9 +14,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /*
- * Register the projects post type
+ * Register the project post type
  */
-require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/projects.php';
+require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/project.php';
 
 /*
  * Register the project links metabox
