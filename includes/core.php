@@ -17,3 +17,8 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Register the projects post type
  */
 require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/projects.php';
+
+/*
+ * Register the project links metabox
+ */
+require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/metaboxes/project-links.php';
