@@ -22,7 +22,7 @@ function project_links_metabox() {
         __( 'Project Links', 'nahid.dev-extras' ),
         'project_links_metabox_callback',
         'project',
-        'normal',
+        'side',
         'default'
     );
 }
