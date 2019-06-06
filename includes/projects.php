@@ -44,6 +44,7 @@ function create_projects_post_type() {
         'show_in_rest' => true,
         'supports' => array( 'title', 'editor', 'page-attributes', ),
         'publicly_queryable' => true,
+        'taxonomies' => array( 'category' ),
       )
     );
 }
