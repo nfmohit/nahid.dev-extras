@@ -49,7 +49,7 @@ function project_links_metabox_callback() {
         </div>
         <div class="components-base-control__field">
             <label class="components-base-control__label" for="project_links_metabox_wp_org_url"><?php echo __( 'WordPress.org URL', 'nahid.dev-extras' ); ?></label>
-            <input class="components-text-control__input" type="url" id="project_links_metabox_wp_org_url" name="project_links_metabox_wp_org_url" value="<?php echo esc_url( $github_url ); ?>" />
+            <input class="components-text-control__input" type="url" id="project_links_metabox_wp_org_url" name="project_links_metabox_wp_org_url" value="<?php echo esc_url( $wp_org_url ); ?>" />
         </div>
     </div>
 
