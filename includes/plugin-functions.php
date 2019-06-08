@@ -17,7 +17,7 @@ function create_api_project_meta_field() {
     register_rest_field( 'project', 'project-custom-fields',
     	array(
 	        'get_callback' => 'get_project_meta_for_api',
-	        'schema' => 'string',
+	        'schema' => null,
 	    )
 	);
 }
