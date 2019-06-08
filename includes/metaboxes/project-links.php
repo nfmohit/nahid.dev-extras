@@ -64,10 +64,20 @@ function project_links_metabox_save( $post_id ) {
 
     if( !current_user_can( 'edit_post' ) ) return;
 
-    if( isset( $_POST['project_links_metabox_github_url'] ) )
-        update_post_meta( $post_id, 'project_links_metabox_github_url', esc_url( $_POST['project_links_metabox_github_url'] ) );
+    if( isset( $_POST['project_links_metabox_github_url'] ) ) {
+        if ( $_POST['project_links_metabox_github_url'] == '' ) {
+            delete_post_meta( $post_id, 'project_links_metabox_github_url' );
+        } else {
+            update_post_meta( $post_id, 'project_links_metabox_github_url', esc_url( $_POST['project_links_metabox_github_url'] ) );
+        }
+    }
 
-    if( isset( $_POST['project_links_metabox_wp_org_url'] ) )
-        update_post_meta( $post_id, 'project_links_metabox_wp_org_url', esc_url( $_POST['project_links_metabox_wp_org_url'] ) );
+    if( isset( $_POST['project_links_metabox_wp_org_url'] ) ) {
+        if ( $_POST['project_links_metabox_wp_org_url'] == '' ) {
+            delete_post_meta( $post_id, 'project_links_metabox_wp_org_url' );
+        } else {
+            update_post_meta( $post_id, 'project_links_metabox_wp_org_url', esc_url( $_POST['project_links_metabox_wp_org_url'] ) );
+        }
+    }
 }
 add_action( 'save_post', 'project_links_metabox_save' );
