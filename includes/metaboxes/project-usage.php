@@ -42,8 +42,7 @@ function project_usage_metabox_callback() {
 
     <div class="components-base-control">
         <div class="components-base-control__field">
-            <label class="components-base-control__label" for="project_usage_metabox_usage_text"><?php echo __( 'Project Usage Text', 'nahid.dev-extras' ); ?></label>
-            <textarea class="components-textarea-control__input" id="project_usage_metabox_usage_text" name="project_usage_metabox_usage_text"><?php echo esc_html( $usage_text ); ?></textarea>
+            <?php wp_editor( $usage_text, 'project_usage_metabox_usage_text' ); ?>
         </div>
     </div>
 
