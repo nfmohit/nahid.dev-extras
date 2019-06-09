@@ -24,6 +24,11 @@ require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/project.php';
 require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/metaboxes/project-links.php';
 
 /*
+ * Register the project usage metabox
+ */
+require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/metaboxes/project-usage.php';
+
+/*
  * Custom Plugin Functions
  */
 require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/plugin-functions.php';
