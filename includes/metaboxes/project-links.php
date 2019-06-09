@@ -40,7 +40,7 @@ function project_links_metabox_callback() {
 
     $website_url = isset( $values[ 'project_links_metabox_website_url' ] ) ? esc_url( $values[ 'project_links_metabox_website_url' ][ 0 ] ) : '';
 
-    wp_nonce_field( 'project_links_metabox_nonce', 'meta_box_nonce' );
+    wp_nonce_field( 'project_custom_fields_metabox_nonce', 'meta_box_nonce' );
 
     ?>
 
@@ -66,7 +66,7 @@ function project_links_metabox_save( $post_id ) {
 
     if( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) return;
 
-    if( !isset( $_POST['meta_box_nonce'] ) || !wp_verify_nonce( $_POST['meta_box_nonce'], 'project_links_metabox_nonce' ) ) return;
+    if( !isset( $_POST['meta_box_nonce'] ) || !wp_verify_nonce( $_POST['meta_box_nonce'], 'project_custom_fields_metabox_nonce' ) ) return;
 
     if( !current_user_can( 'edit_post' ) ) return;
 

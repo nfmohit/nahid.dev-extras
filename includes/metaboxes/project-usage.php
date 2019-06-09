@@ -34,15 +34,13 @@ function project_usage_metabox_callback() {
 
     $values = get_post_custom( $post->ID );
 
-    $usage_text = isset( $values[ 'project_usage_metabox_usage_text' ] ) ? esc_html( $values[ 'project_usage_metabox_usage_text' ][ 0 ] ) : '';
-
-    wp_nonce_field( 'project_usage_metabox_nonce', 'meta_box_nonce' );
+    $usage_text = isset( $values[ 'project_usage_metabox_usage_text' ] ) ? $values[ 'project_usage_metabox_usage_text' ][ 0 ] : '';
 
     ?>
 
     <div class="components-base-control">
         <div class="components-base-control__field">
-            <?php wp_editor( $usage_text, 'project_usage_metabox_usage_text' ); ?>
+            <?php echo wp_editor( $usage_text, 'project_usage_metabox_usage_text' ); ?>
         </div>
     </div>
 
@@ -52,8 +50,6 @@ function project_usage_metabox_callback() {
 function project_usage_metabox_save( $post_id ) {
 
     if( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) return;
-
-    if( !isset( $_POST['meta_box_nonce'] ) || !wp_verify_nonce( $_POST['meta_box_nonce'], 'project_usage_metabox_nonce' ) ) return;
 
     if( !current_user_can( 'edit_post' ) ) return;
 
