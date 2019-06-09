@@ -38,6 +38,8 @@ function project_links_metabox_callback() {
 
     $wp_org_url = isset( $values[ 'project_links_metabox_wp_org_url' ] ) ? esc_url( $values[ 'project_links_metabox_wp_org_url' ][ 0 ] ) : '';
 
+    $website_url = isset( $values[ 'project_links_metabox_website_url' ] ) ? esc_url( $values[ 'project_links_metabox_website_url' ][ 0 ] ) : '';
+
     wp_nonce_field( 'project_links_metabox_nonce', 'meta_box_nonce' );
 
     ?>
@@ -50,6 +52,10 @@ function project_links_metabox_callback() {
         <div class="components-base-control__field">
             <label class="components-base-control__label" for="project_links_metabox_wp_org_url"><?php echo __( 'WordPress.org URL', 'nahid.dev-extras' ); ?></label>
             <input class="components-text-control__input" type="url" id="project_links_metabox_wp_org_url" name="project_links_metabox_wp_org_url" value="<?php echo esc_url( $wp_org_url ); ?>" />
+        </div>
+        <div class="components-base-control__field">
+            <label class="components-base-control__label" for="project_links_metabox_website_url"><?php echo __( 'Website URL', 'nahid.dev-extras' ); ?></label>
+            <input class="components-text-control__input" type="url" id="project_links_metabox_website_url" name="project_links_metabox_website_url" value="<?php echo esc_url( $website_url ); ?>" />
         </div>
     </div>
 
@@ -77,6 +83,14 @@ function project_links_metabox_save( $post_id ) {
             delete_post_meta( $post_id, 'project_links_metabox_wp_org_url' );
         } else {
             update_post_meta( $post_id, 'project_links_metabox_wp_org_url', esc_url( $_POST['project_links_metabox_wp_org_url'] ) );
+        }
+    }
+
+    if( isset( $_POST['project_links_metabox_website_url'] ) ) {
+        if ( $_POST['project_links_metabox_website_url'] == '' ) {
+            delete_post_meta( $post_id, 'project_links_metabox_website_url' );
+        } else {
+            update_post_meta( $post_id, 'project_links_metabox_website_url', esc_url( $_POST['project_links_metabox_website_url'] ) );
         }
     }
 }
