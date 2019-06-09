@@ -61,7 +61,7 @@ function project_usage_metabox_save( $post_id ) {
         if ( $_POST['project_usage_metabox_usage_text'] == '' ) {
             delete_post_meta( $post_id, 'project_usage_metabox_usage_text' );
         } else {
-            update_post_meta( $post_id, 'project_usage_metabox_usage_text', esc_html( $_POST['project_usage_metabox_usage_text'] ) );
+            update_post_meta( $post_id, 'project_usage_metabox_usage_text', $_POST['project_usage_metabox_usage_text'] );
         }
     }
 }
