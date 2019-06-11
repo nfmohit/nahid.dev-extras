@@ -42,7 +42,7 @@ function create_project_post_type() {
         'menu_icon' => 'dashicons-portfolio',
         'hierarchical' => true,
         'show_in_rest' => true,
-        'supports' => array( 'title', 'editor', 'page-attributes', 'excerpt', 'custom-fields' ),
+        'supports' => array( 'title', 'editor', 'page-attributes', 'excerpt', 'custom-fields', 'thumbnail' ),
         'publicly_queryable' => true,
         'taxonomies' => array( 'category' ),
       )
