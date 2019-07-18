@@ -32,3 +32,8 @@ require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/metaboxes/projec
  * Custom Plugin Functions
  */
 require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/plugin-functions.php';
+
+/*
+ * Netlify Webhook Trigger
+ */
+require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/netlify-trigger.php';
